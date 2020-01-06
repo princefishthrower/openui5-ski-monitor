@@ -1,0 +1,35 @@
+<mvc:View controllerName="openui5-ski-monitor.openui5-ski-monitor.controller.SkiMonitor" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page title="OpenUI5 Ski Monitor App">
+					<content>
+						<Panel headerText="Ski Monitor for Sankt Anton am Arlberg, Austria">
+							<content>
+								<ScrollContainer horizontal="false" vertical="true">
+									<PullToRefresh refresh="onRefresh" id="pullToRefresh"/>
+									<List showSeparators="Inner" items="{/EntryCollection}">
+										<FeedListItem sender="{Author}" icon="http://pbs.twimg.com/profile_images/474919605618475008/7IFjw-Lq.jpeg" iconDensityAware="false"
+											info="{Type}" timestamp="{Date}" text="{Text}"/>
+									</List>
+								</ScrollContainer>
+							</content>
+						</Panel>
+						<FlexBox justifyContent="Center">
+							<Button text="Hey, this is pretty neat - show me the stack behind this crafty app!" press="openStackPopOver"/>
+						</FlexBox>
+					</content>
+					<footer>
+						<OverflowToolbar id="otbFooter">
+							<ToolbarSpacer/>
+							<Button text="Written by Christopher Frewin © 2020. Snow results are provided by Weather Unlocked © 2020, https://weatherunlocked.com" enabled="false"/>
+							<Button text="App Powered by SAPUI5" enabled="false"/>
+							<Button icon="sap-icon://sap-ui5" enabled="false"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
